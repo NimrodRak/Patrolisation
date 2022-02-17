@@ -49,13 +49,9 @@ def objective(v):
 
 if __name__ == "__main__":
     times = []
-    for args in ({}, {"workers": -1, "updating": "deferred"}):
-        start = time.time()
-        res = differential_evolution(objective, bounds, popsize=NP, constraints=(
-            NonlinearConstraint(pasture_boundary, 0, 0)), disp=True, **args)
-        end = time.time()
-        times.append(end - start)
-        print(res)
-
-    async_time, sync_time, *_ = times
-    print(f"{async_time}, {sync_time}, {(sync_time/async_time - 1)*100} less computation time")
+    start = time.time()
+    res = differential_evolution(objective, bounds, popsize=NP, constraints=(
+        NonlinearConstraint(pasture_boundary, 0, 0)), disp=True, workers=-1, updating="deferred")
+    end = time.time()
+    print(res)
+    print(f"Optimization took {end - start} seconds.")
