@@ -59,15 +59,3 @@ if __name__ == "__main__":
 
     async_time, sync_time, *_ = times
     print(f"{async_time}, {sync_time}, {(sync_time/async_time - 1)*100} less computation time")
-
-    # ackleys benchmark: 1000 points (2 for computation)
-    # NP = 4: 9-11 (async, sync), 15% less computation time
-    # NP = 15: 19-34, 44% less computation time
-    # NP = 150: 180-300,  40% less compuation time
-    # NP = 500: 1195-1601, 25% less computationt ime
-
-    # ackleys + 0.01 sleep benchmark: 1000 points
-    # NP = 15: 557-2305, 75% decrease
-
-    # on Ryzen 5 4500U (w/ 8GB RAM) which is a bit weaker than i5 5350h, an average CPU 7 years ago
-    # if client uses multithreading, it might be more helpful
