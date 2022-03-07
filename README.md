@@ -14,7 +14,7 @@ To use the project one must first define the `in_pasture` method in `pasture.py`
 
 `x` is the vector of points defining the bezier curve in format (x1, x2, ..., xD, y1, y2, ...,yD) corresponding to `fun`, the optimal fitness reached during the run.
 ## Benchmarks
-Tested on Ryzen 5 4500U (w/ 8GB RAM) which is a bit weaker than i5 5350h, an average CPU 7 years ago. If client uses multithreading, it might be more helpful.
+Tested on Ryzen 5 4500U (w/ 6 cores, 8GB RAM) which is weaker than i5-4590S, an average CPU 8 years ago (when averaging its higher clock speed together with its lower core count). If client uses multithreading, it might be more helpful.
 ### Ackley's function, 1000 points (used only 2 points for computation)
 * NP = 4: 9-11 (async, sync), **15%** less computation time when parallelized.
 * NP = 15: 19-34, **44%** decrease.
