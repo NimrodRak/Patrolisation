@@ -47,8 +47,7 @@ def objective(v):
 
     return -simulate(points) # negate for maximum
 
-
-if __name__ == "__main__":
+def main():
     times = []
     start = time.time()
     res = differential_evolution(objective, bounds, popsize=NP, constraints=(
@@ -56,3 +55,6 @@ if __name__ == "__main__":
     end = time.time()
     print(res)
     print(f"Optimization took {end - start} seconds.")
+
+if __name__ == "__main__":
+    main()
