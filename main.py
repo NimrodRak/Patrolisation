@@ -39,6 +39,7 @@ def objective(v):
     # get samples evenly spread on the bezier curve to approximate it because fitness function
     # needs discrete represntation
     sampling_indices = np.linspace(INTERPOLATION_START, INTERPOLATION_END, PRECISION)
+    # TODO : piecewise to cubic curves, not one big one
     samples = curve.evaluate_multi(sampling_indices)
 
     # points are now organized in a list of (bi-)tuples
